@@ -10,7 +10,7 @@ As it turns out, one of the younger Elves was playing on a gift shop computer an
 
 They've even checked most of the product ID ranges already; they only have a few product ID ranges (your puzzle input) that you'll need to check. For example:
 
-```
+```txt
 11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124
 ```
 
