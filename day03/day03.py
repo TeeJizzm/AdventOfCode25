@@ -20,12 +20,30 @@ import tools.texttolists as tl
 ############################
 # Functions
 
+def findBiggest(nums, size=2):
+    biggest = []
+    y = 0
+
+    for x in range(size-1, -1, -1):
+        high = max(nums[:len(nums) - x])
+        y = nums.index(high) + 1
+        nums = nums[y:]
+        biggest.append(high)
+    
+    return int("".join(map(str, biggest)))
+
+
 def day03(text):
-    print("Day 03 - *NAME*")
+    print("Day 03 - Lobby")
     
-    part1, part2 = text, ''
+    part1, part2 = 0, 0
     
-    
+    banks = tl.toList(text)
+    for bank in banks:
+        nums = [int(n) for n in bank]
+
+        part1 += findBiggest(nums, 2)
+        part2 += findBiggest(nums, 12)
     
     return part1, part2
 
@@ -38,7 +56,7 @@ if __name__ == "__main__":
     # Change file
     #######
     file = "ex.txt"
-    #file = "in.txt"
+    file = "in.txt"
     #######
     
     # Get absolute filepath of file
