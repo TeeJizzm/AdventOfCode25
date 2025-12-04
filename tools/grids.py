@@ -50,4 +50,9 @@ def findWord(grid, word):
 
     return count
 
+def setLocs(grid, locs, symb="."):
+    
+    for r, c in locs:
+        grid[r][c] = symb
+
 ########## EOF ############
