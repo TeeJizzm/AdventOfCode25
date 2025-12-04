@@ -3,6 +3,8 @@
 
 ###########################
 
+ADJ = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)]
+
 def padArray(grid, padding=2, pad="."):
 
     cols = padding + len(grid[0]) + padding
