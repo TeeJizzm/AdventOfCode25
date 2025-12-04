@@ -21,7 +21,7 @@ import tools.texttolists as tl
 # Functions
 
 def day04(text):
-    print("Day 04 - *NAME*")
+    print("Day 04 - Printing Department")
     
     part1, part2 = text, ''
     
