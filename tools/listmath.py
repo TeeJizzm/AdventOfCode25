@@ -20,4 +20,13 @@ def sumTopList(list, X=1):
         
         return -1
 
+def multiplyList(list):
+
+    tot = 1
+
+    for x in list:
+        tot *= x
+
+    return(tot)
+
 ########### EOF ############
