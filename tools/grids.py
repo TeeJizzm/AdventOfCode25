@@ -45,7 +45,7 @@ def findWord(grid, word):
 
     count = 0
 
-    dirs = [(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1),(-1,0),(-1,1)] # Clockwise directions
+    dirs = ADJ # Clockwise directions
 
     for x, y in locs:
         for dx, dy in dirs:
