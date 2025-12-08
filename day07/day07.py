@@ -22,17 +22,19 @@ import tools.grids as gr
 # Functions
 
 def quantumLine(prev, curr):
+
     for idx, val in enumerate(prev):
         if isinstance(val, int) and val > 0:
-            val = val if isinstance(val, int) else 1
-            if curr[idx] == "^" or curr[idx] == "*":
+            #print(val, isinstance(val, int))
+            
+            if isinstance(curr[idx], int):
+                curr[idx] += val
+            else:
                 curr[idx] = "*"
                 curr[idx - 1] = val + curr[idx-1]
                 curr[idx + 1] = val + curr[idx+1]
-            elif isinstance(curr[idx], int):
-                curr[idx] - val
-            else:
-                curr[idx] = val if isinstance(val, int) else 1
+
+    
     return curr
 
 def updateLine(prev, curr):
@@ -59,13 +61,10 @@ def day07(text):
     gr.setLocs(grid, gr.findLocs(grid, "S"), 1)
 
     for r in range(len(grid[:-1])):
-        #grid[r+1] = updateLine(grid[r],grid[r+1])
         grid[r+1] = quantumLine(grid[r],grid[r+1])
+        part1 += grid[r].count("*")
 
-    for x, line in enumerate(grid):
-        part1 += line.count("*")
-        print(line)
-
+    part2 = sum(grid[-1])
 
     return part1, part2
 
@@ -78,7 +77,7 @@ if __name__ == "__main__":
     # Change file
     #######
     file = "ex.txt"
-    #file = "in.txt"
+    file = "in.txt"
     #######
     
     # Get absolute filepath of file
